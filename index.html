@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Hitting Tiles - Space Edition (Step 1)</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="ui">
+      <div id="topBar">
+        <div id="score">Score: <span id="scoreVal">0</span></div>
+        <div id="controls">
+          <label for="difficulty">Difficulty:</label>
+          <select id="difficulty">
+            <option value="easy">Easy</option>
+            <option value="normal" selected>Normal</option>
+            <option value="hard">Hard</option>
+          </select>
+        </div>
+        <div id="soundControl">
+          <button id="muteBtn" aria-label="Mute or unmute sounds">🔊</button>
+        </div>
+        <div id="lives">Lives: <span id="livesVal">3</span></div>
+      </div>
+      <div id="hint">Click tiles or press <strong>Space</strong> / <strong>ArrowDown</strong> to hit when they cross the hit line.</div>
+    </div>
+
+    <canvas id="gameCanvas" tabindex="0"></canvas>
+
+    <div id="overlay" class="hidden">
+      <div id="gameOver">
+        <h1>Game Over</h1>
+        <p>Your score: <span id="finalScore">0</span></p>
+        <div style="margin-top:10px;">
+          <label for="overlayDifficulty" style="margin-right:8px;">Choose difficulty for next run:</label>
+          <select id="overlayDifficulty">
+            <option value="easy">Easy</option>
+            <option value="normal">Normal</option>
+            <option value="hard">Hard</option>
+          </select>
+        </div>
+        <button id="restartBtn" style="margin-top:12px;">Restart</button>
+      </div>
+    </div>
+
+    <script src="game.js"></script>
+  </body>
+</html>
